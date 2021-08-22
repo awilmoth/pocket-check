@@ -1,5 +1,7 @@
 package checkNginx
 
+//this is only partially implemented for now.
+//
 import (
 	"bufio"
 	"fmt"
