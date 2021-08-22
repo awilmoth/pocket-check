@@ -12,7 +12,7 @@ import (
 	"strings"
 )
 
-func checkRam() {
+func CheckRam() {
 	var err error
 	free := exec.Command("free")
 	grep := exec.Command("grep", "Mem")

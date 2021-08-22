@@ -1,12 +1,12 @@
 package main
 
 import (
-	"checkRam"
 	"context"
 	"flag"
 	"fmt"
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"os"
+	"src/checkRam"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 	)
 
 	f := func(context.Context, []string) error {
-		checkRam()
+		checkRam.CheckRam()
 		return nil
 	}
 
