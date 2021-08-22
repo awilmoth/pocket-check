@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"os"
+	"src/checkCpu"
 	"src/checkHd"
 	"src/checkRam"
 )
@@ -18,6 +19,10 @@ func main() {
 	f := func(context.Context, []string) error {
 		checkRam.CheckRam()
 		checkHd.CheckHd()
+		checkCpu.CheckCpu()
+		//checkPorts.checkPorts()
+		//checkPorts.checkNginx()
+		//checkPorts.checkRunning()
 		return nil
 	}
 
@@ -29,7 +34,10 @@ func main() {
 	}
 
 	if err := root.ParseAndRun(context.Background(), os.Args[1:]); err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		fprintf, err := fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		if err != nil {
+			fmt.Println(fprintf)
+		}
 		os.Exit(1)
 	}
 }
