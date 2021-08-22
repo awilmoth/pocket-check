@@ -1,0 +1,4 @@
+package checkHd
+
+func checkHd() {
+}

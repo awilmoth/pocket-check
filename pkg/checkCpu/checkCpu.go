@@ -1,0 +1,4 @@
+package checkCpu
+
+func checkCpu() {
+}

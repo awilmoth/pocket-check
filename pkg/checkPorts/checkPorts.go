@@ -1,0 +1,4 @@
+package checkPorts
+
+func checkPorts() {
+}
