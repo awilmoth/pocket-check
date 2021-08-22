@@ -1,4 +1,0 @@
-func checkNginx() {
-// -port
-// -ssl
-}
