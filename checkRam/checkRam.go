@@ -1,9 +1,8 @@
 package checkRam
 
 import (
-	"fmt"
 	"github.com/PumpkinSeed/cage"
-	//"github.com/peterbourgon/ff/v3/ffcli"
+	"github.com/fatih/color"
 	"github.com/rwtodd/Go.Sed/sed"
 	"log"
 	"os"
@@ -42,26 +41,33 @@ func CheckRam() {
 	removeChars, err := sed.New(strings.NewReader(`s|[Mem:,]||g`))
 	ram, err = removeChars.RunString(ram)
 
-	//removing extra characters from the string - 16
+	//removing extra characters from the string
 	removeNumbers, err := sed.New(strings.NewReader(`s/.{55}$//`))
 	ram, err = removeNumbers.RunString(ram)
 
-	//removing extra characters from the string
+	//removing extra characters and whitespae from the string
 	removeWhitespace, err := sed.New(strings.NewReader(`s/\s+//g`))
 	ram, err = removeWhitespace.RunString(ram)
-
 	ram = strings.TrimSuffix(ram, "\n")
 
+	//convert to integer
 	ramInt, err := strconv.Atoi(ram)
-	if err == nil {
-		fmt.Println(ramInt)
-	}
-	fmt.Printf("\nValue: %v", ramInt)
+
+	//determine if RAM is over 8 GB
+	ramCompare(ramInt)
 
 }
 
 func must(err error) {
 	if err != nil {
 		log.Fatalln(err)
+	}
+}
+
+func ramCompare(ram int) {
+	if ram > 8000000 {
+		color.Green("SUCCESS: RAM is above 8 GB")
+	} else {
+		color.Red("ERROR: RAM is below 8 GB")
 	}
 }
