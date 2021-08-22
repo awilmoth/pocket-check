@@ -34,3 +34,25 @@ func main() {
 		os.Exit(1)
 	}
 }
+
+func checkRam() {
+}
+
+func checkCpu() {
+}
+
+func checkHd() {
+}
+
+func checkPorts() {
+}
+
+func checkNginx() {
+	// -port
+	// -ssl
+}
+
+func checkRunning() {
+	// -nginx
+	// -pocket
+}
