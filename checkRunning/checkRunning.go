@@ -18,7 +18,7 @@ func CheckRunning() {
 
 func getRunning() [2]bool {
 	var running [2]bool
-	KisPocketRunning := pocketRunning()
+	isPocketRunning := pocketRunning()
 	isNginxRunning := nginxRunning()
 	running[0] = isPocketRunning
 	running[1] = isNginxRunning
