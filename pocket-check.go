@@ -5,9 +5,13 @@ import (
 	"flag"
 	"fmt"
 	"github.com/peterbourgon/ff/v3/ffcli"
-	"log"
+	"github.com/awilmoth/pocket-check/pkg/checkRam"
+	"github.com/awilmoth/pocket-check/pkg/checkCpu"
+	"github.com/awilmoth/pocket-check/pkg/checkHd"
+	"github.com/awilmoth/pocket-check/pkg/checkPorts"
+	"github.com/awilmoth/pocket-check/pkg/checkNginx"
+	"github.com/awilmoth/pocket-check/pkg/checkRunning"
 	"os"
-	"os/exec"
 )
 
 func main() {
@@ -20,12 +24,7 @@ func main() {
 		FlagSet:     rootFlagSet,
 		Subcommands: []*ffcli.Command{},
 		Exec: func(context.Context, []string) error {
-			cmd := exec.Command("ls", "-lah")
-			out, err := cmd.CombinedOutput()
-			if err != nil {
-				log.Fatalf("Failed with error %s\n", err)
-			}
-			fmt.Printf(string(out))
+			checkRam()
 			return nil
 		},
 	}
@@ -33,26 +32,4 @@ func main() {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 		os.Exit(1)
 	}
-}
-
-func checkRam() {
-}
-
-func checkCpu() {
-}
-
-func checkHd() {
-}
-
-func checkPorts() {
-}
-
-func checkNginx() {
-	// -port
-	// -ssl
-}
-
-func checkRunning() {
-	// -nginx
-	// -pocket
 }

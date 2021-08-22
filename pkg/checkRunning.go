@@ -1,0 +1,4 @@
+func checkRunning() {
+// -nginx
+// -pocket
+}
