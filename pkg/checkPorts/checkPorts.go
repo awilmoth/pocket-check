@@ -1,4 +1,0 @@
-package checkPorts
-
-func checkPorts() {
-}

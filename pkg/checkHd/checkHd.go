@@ -1,4 +1,0 @@
-package checkHd
-
-func checkHd() {
-}
