@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"os"
+	"src/checkHd"
 	"src/checkRam"
 )
 
@@ -16,6 +17,7 @@ func main() {
 
 	f := func(context.Context, []string) error {
 		checkRam.CheckRam()
+		checkHd.CheckHd()
 		return nil
 	}
 

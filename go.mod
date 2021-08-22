@@ -7,4 +7,5 @@ require (
 	github.com/fatih/color v1.12.0
 	github.com/peterbourgon/ff/v3 v3.1.0
 	github.com/rwtodd/Go.Sed v0.0.0-20210816025313-55464686f9ef
+	golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
 )
