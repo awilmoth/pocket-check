@@ -8,6 +8,7 @@ import (
 	"os"
 	"src/checkCpu"
 	"src/checkHd"
+	"src/checkNginx"
 	"src/checkPorts"
 	"src/checkRam"
 )
@@ -22,7 +23,7 @@ func main() {
 		checkHd.CheckHd()
 		checkCpu.CheckCpu()
 		checkPorts.CheckPorts()
-		//checkNginx.checkNginx()
+		checkNginx.CheckNginx()
 		//checkUlimit.checkUlimit()
 		//checkRunning.checkRunning()
 		return nil
