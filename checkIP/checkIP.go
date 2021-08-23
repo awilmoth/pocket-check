@@ -18,7 +18,12 @@ func CheckIP() {
 		os.Stderr.WriteString("\n")
 		os.Exit(1)
 	}
-	defer resp.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+
+		}
+	}(resp.Body)
 	io.Copy(os.Stdout, resp.Body)
 	fmt.Println()
 	fmt.Println()
