@@ -12,6 +12,7 @@ import (
 	"src/checkPorts"
 	"src/checkRam"
 	"src/checkRunning"
+	"src/checkUlimit"
 )
 
 func main() {
@@ -25,7 +26,7 @@ func main() {
 		checkCpu.CheckCpu()
 		checkPorts.CheckPorts()
 		//checkNginx.CheckNginx()
-		//checkUlimit.CheckUlimit()
+		checkUlimit.CheckUlimit()
 		checkRunning.CheckRunning()
 		checkPocket.CheckPocket()
 		return nil

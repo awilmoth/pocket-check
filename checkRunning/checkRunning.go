@@ -97,6 +97,6 @@ func runningCompare(running [2]bool) {
 	if running[0] == true && running[1] == true {
 		color.Green("SUCCESS: Pocket node and reverse proxy are running")
 	} else {
-		color.Red("ERROR: one or more services is not running")
+		color.Red("ERROR: One or more services is not running")
 	}
 }
